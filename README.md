@@ -1,1 +1,1 @@
-# csv-locations-map
+Upload a csv file with to display locations on the map.
