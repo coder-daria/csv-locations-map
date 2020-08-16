@@ -4,7 +4,7 @@ import { ReactComponent  as  Location } from "./location.svg"
 
 export const LocationSVG = styled(Location)`
   cursor: pointer;
-  fill: #E13D00 !important;
+  fill: ${({ fill }) => fill} !important;
   height: 50px;
   width: 50px;
 
