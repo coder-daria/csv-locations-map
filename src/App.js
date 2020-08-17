@@ -1,8 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import 'sanitize.css';
 
-import { MapGL } from './components';
-import { UploadFileView, Form} from './views';
+import { UploadFileView, Form, MapGL } from './views';
 
 import { Container } from './App.styles';
 
