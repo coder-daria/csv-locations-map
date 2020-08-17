@@ -1,14 +1,23 @@
-import React from 'react';
-import 'sanitize.css';
+import React, { memo } from 'react';
 
-import { Container, Button } from "./UploadFileView.styles";
+import { Container } from '../../shared/styles';
+
+import { useFileUpload } from './utils';
+
+import { StyledFileUpload } from './UploadFileView.styles';
 
 function UploadFileView({ uploadFile }) {
+  const { onUpload, errorMessage } = useFileUpload({ uploadFile });
+
   return (
     <Container>
-      <Button onClick={uploadFile}>Upload file</Button>
+      <StyledFileUpload>
+        <label>Upload file</label>
+        <input accept='.csv'  type='file' onChange={onUpload} />
+      </StyledFileUpload>
+      <div>{errorMessage}</div>
     </Container>
   );
 }
 
-export default UploadFileView;
+export default memo(UploadFileView);

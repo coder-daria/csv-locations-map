@@ -1,37 +1,31 @@
-import styled from "styled-components";
-import background from "../../assets/city.jpg";
+import styled from 'styled-components';
 
-const ACTIVE_BTN_COLOR = "#13204D";
-
-export const Container = styled.div`
+export const StyledFileUpload = styled.div`
   align-items: center;
-  background-image: url(${background});
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  width: 100vw;
-`;
-
-
-export const Button = styled.button`
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid #fff;
-  color: white;
-  font-family: 'Indie Flower', cursive;
+  display: flex;
   font-size: 2rem;
   font-weight: 300;
   height: 100px;
-  outline: none;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
   width: 300px;
+
+  input {
+    cursor: pointer;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+  }
 
   &:hover {
     box-shadow: 0px 0px 5px white;
-    cursor: pointer;
   }
 
   &:active {
-    border: 2px solid ${ACTIVE_BTN_COLOR};
-    box-shadow: 0px 0px 5px ${ACTIVE_BTN_COLOR};
-    color: ${ACTIVE_BTN_COLOR};
+    box-shadow: 0px 0px 10px #fff;
   }
 `;
