@@ -18,19 +18,18 @@ export const StyledForm = styled.div`
   padding: 20px;
 `;
 
-export const SuccessMessage = styled.div`
+export const FileInformation = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 0.8rem;
   padding-bottom: 20px;
 `;
 
-export const Info = styled.div`
-  align-items: center;
+export const FormInfo = styled.span`
   color: #fff;
-  display: flex;
-  flex-direction: column;
   font-size: 1.5rem;
+  display: inline-block;
+  text-align: center;
 `;
 
 export const ActionButtons = styled.div`
