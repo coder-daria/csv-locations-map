@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SortableItem /> should match the sanpshot 1`] = `<Component />`;

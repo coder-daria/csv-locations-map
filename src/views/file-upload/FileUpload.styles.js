@@ -29,3 +29,9 @@ export const StyledFileUpload = styled.div`
     box-shadow: 0px 0px 10px #fff;
   }
 `;
+
+
+export const ErrorMessage = styled.span`
+  display: inline-block;
+  padding: 5px;
+`;

@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import 'sanitize.css';
 
-import { UploadFileView, Form, MapGL } from './views';
+import { FileUpload, Form, MapGL } from './views';
 
 import { Container } from './App.styles';
 
@@ -13,7 +13,7 @@ function App() {
     () => {
       switch (true) {
         case !file:
-          return <UploadFileView uploadFile={uploadFile} />
+          return <FileUpload uploadFile={uploadFile} />
         case !columnsOrder:
           return <Form fileName={file.name} rowsNum={file.data.length} setColumnsOrder={setColumnsOrder} uploadFile={uploadFile} />;
         default:

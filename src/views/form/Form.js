@@ -29,7 +29,7 @@ function Form({ setColumnsOrder, fileName, rowsNum, uploadFile }) {
     onSubmit,
   } = useFormDetails({ setColumnsOrder, uploadFile });
 
-  return (
+  return (  
     <Container>
       <StyledForm>
         <FileInformation>

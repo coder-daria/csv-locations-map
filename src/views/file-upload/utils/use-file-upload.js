@@ -4,7 +4,7 @@ import Papa from 'papaparse';
 import { getCoordinates, validateFile } from '.';
 
 function useFileUpload({ uploadFile }) {
-  const [errorMessage, setErrorMessage] = useState();
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
   const handleUpload = useCallback(
     ({
@@ -15,7 +15,7 @@ function useFileUpload({ uploadFile }) {
       Papa.parse(selectedFile, {
         complete: (results) => {
           const error = validateFile(results);
-  
+
           if(error) {
             setErrorMessage(error);
             return;

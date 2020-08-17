@@ -4,7 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { Marker } from './marker';
 import getCategories from '../utils/get-categories';
 
-function MarkerLayere({ file, columnsOrder }) {
+function MarkerLayer({ file, columnsOrder }) {
   const addressColumnIndex = columnsOrder.indexOf('address');
   const categoryColumnIndex = columnsOrder.indexOf('category');
   const categoriesStyle = getCategories(file, categoryColumnIndex);
@@ -25,4 +25,4 @@ function MarkerLayere({ file, columnsOrder }) {
   });
 }
 
-export default memo(MarkerLayere);
+export default memo(MarkerLayer);

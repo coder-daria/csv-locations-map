@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SortableList /> should match the sanpshot 1`] = `
+<Component
+  isSorting={false}
+  items={
+    Array [
+      "state",
+      "city",
+      "address",
+      "zip",
+      "coategory",
+    ]
+  }
+/>
+`;
