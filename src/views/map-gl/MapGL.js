@@ -1,4 +1,6 @@
 import React, { useState, memo, useCallback } from 'react';
+import { arrayOf, string, shape, number, instanceOf } from 'prop-types';
+
 import ReactMapGL from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -32,5 +34,16 @@ function MapGL({ file, columnsOrder }) {
       </ReactMapGL>
   );
 }
+
+MapGL.propTypes = {
+  columnsOrder: arrayOf(string).isRequired,
+  file: shape({
+    coordinates: arrayOf(arrayOf(number)),
+    data: arrayOf(arrayOf(string)),
+    errors: instanceOf(Array),
+    meta: instanceOf(Object),
+    name: string,
+  }).isRequired,
+};
 
 export default memo(MapGL);

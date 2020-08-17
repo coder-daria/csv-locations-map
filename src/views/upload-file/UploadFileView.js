@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { func } from 'prop-types';
 
 import { Container } from '../../shared/styles';
 
@@ -19,5 +20,10 @@ function UploadFileView({ uploadFile }) {
     </Container>
   );
 }
+
+
+UploadFileView.propTypes = {
+  uploadFile: func.isRequired,
+};
 
 export default memo(UploadFileView);
