@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const InputWrapper = styled.div`
+export const StyledFileUpload = styled.div`
   align-items: center;
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid #fff;

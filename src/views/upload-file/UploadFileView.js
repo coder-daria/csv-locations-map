@@ -1,63 +1,23 @@
-import React, { useCallback } from 'react';
-import Papa from 'papaparse';
-
-import { InputWrapper } from './UploadFileView.styles';
+import React, { memo } from 'react';
 
 import { Container } from '../../shared/styles';
 
-const validateFile = (file) => {
-  if(!!file?.errors.length) {
-    return 'Wrong file type. Please upload only csv file.';
-  }
+import { useFileUpload } from './utils';
 
-  if(file?.data.length > 20) {
-    return 'The maximum row number exceeded. Provide less than 20 rows.';
-  }
+import { StyledFileUpload } from './UploadFileView.styles';
 
-  const areMoveThanFiveColumns = file?.data.filter(columns => columns.length !== 5).length > 0;
-
-  if(areMoveThanFiveColumns) {
-    return 'The maximum columns number exceeded. Provide less than 20 columns.';
-  }
-}
-
-const randomizeCoordinates = () => [Math.random() * 51.40, Math.random() * 14.87];
-
-const getCoordinates = (data) => data.map(() => randomizeCoordinates());
-
-function UploadFileView({ uploadFile, errorMessage, setErrorMessage }) {
-  const handleFileUpload = useCallback(
-    (e) => {
-      const [file] = e.target.files;
-
-      Papa.parse(file, {
-        complete: (results) => {
-          const errorMessage = validateFile(results);
-
-          if(!errorMessage) {
-            uploadFile({
-              ...results,
-              name: file.name,
-              coordinates: getCoordinates(results.data),
-            });
-            setErrorMessage();
-          } else {
-            setErrorMessage(errorMessage);
-          }
-        },
-      });
-    }, [setErrorMessage, uploadFile]
-  );
+function UploadFileView({ uploadFile }) {
+  const { onUpload, errorMessage } = useFileUpload({ uploadFile });
 
   return (
     <Container>
-      <InputWrapper>
-        <input type='file' onChange={handleFileUpload} placeholder={null} accept='.csv'/>
-        Upload file
-      </InputWrapper>
+      <StyledFileUpload>
+        <label>Upload file</label>
+        <input accept='.csv'  type='file' onChange={onUpload} />
+      </StyledFileUpload>
       <div>{errorMessage}</div>
     </Container>
   );
 }
 
-export default UploadFileView;
+export default memo(UploadFileView);
