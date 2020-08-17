@@ -1,4 +1,5 @@
 import React from 'react';
+import { func, string, number } from 'prop-types';
 
 import SortableList from './sortable-list/SortableList';
 import useFormDetails from './utils/use-form-details';
@@ -51,5 +52,12 @@ function Form({ setColumnsOrder, fileName, rowsNum, uploadFile }) {
     </Container>
   );
 }
+
+Form.propTypes = {
+  fileName: string.isRequired,
+  rowsNum: number.isRequired,
+  setColumnsOrder: func.isRequired,
+  uploadFile: func.isRequired,
+};
 
 export default Form;

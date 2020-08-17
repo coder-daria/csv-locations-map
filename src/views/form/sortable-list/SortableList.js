@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { bool, arrayOf, string } from 'prop-types';
 import { SortableContainer } from 'react-sortable-hoc';
 
 import { SortableItem } from './sortable-item';
@@ -9,14 +10,19 @@ const SortableList = SortableContainer(({ items, isSorting }) => (
   <List>
     {items.map((value, index) => (
       <SortableItem
-        key={index}
         index={index} 
+        isSorting={isSorting}
+        key={index}
         name={value}
         value={index}
-        isSorting={isSorting}
       />
     ))}
   </List>
 ));
+
+SortableList.propTypes = {
+  isSorting: bool.isRequired,
+  items: arrayOf(string).isRequired,
+};
 
 export default memo(SortableList);
