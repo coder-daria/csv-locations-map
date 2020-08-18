@@ -19,9 +19,7 @@ export const StyledForm = styled.div`
 `;
 
 export const FileInformation = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding-bottom: 20px;
 `;
 
@@ -29,6 +27,17 @@ export const FormInfo = styled.span`
   color: #fff;
   font-size: 1.5rem;
   display: inline-block;
+  text-align: center;
+`;
+
+export const RowPreviewContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const RowPreview = styled.span`
+  display: inline-block;
+  width: 200px;
   text-align: center;
 `;
 

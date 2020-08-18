@@ -10,16 +10,18 @@ import {
   ActionButtons,
   Button,
   Container,
-  FormInfo,
-  StyledForm,
   FileInformation,
+  FormInfo,
+  RowPreview,
+  RowPreviewContainer,
+  StyledForm,
 } from './Form.styles';
 
 const { ACCEPT, CANCEL } = BUTTON;
 
 const SORTABLE_AXIS = 'x';
 
-function Form({ setColumnsOrder, fileName, rowsNum, uploadFile }) {
+function Form({ setColumnsOrder, file, uploadFile }) {
   const {
     cancelForm,
     fields,
@@ -33,8 +35,7 @@ function Form({ setColumnsOrder, fileName, rowsNum, uploadFile }) {
     <Container>
       <StyledForm>
         <FileInformation>
-          <span>{fileName}</span>
-          <span>{`${rowsNum} rows uploaded`}</span>
+          <span>{`${file.name} - ${file.data.length} rows`}</span>
         </FileInformation>
         <FormInfo>{FORM_INFORMATION}</FormInfo>
         <SortableList
@@ -44,6 +45,12 @@ function Form({ setColumnsOrder, fileName, rowsNum, uploadFile }) {
           onSortEnd={onSortEnd}
           onSortStart={onSortStart}
         />
+        <div>
+          <div>First row in uploaded file.</div>
+          <RowPreviewContainer>
+            {file.data[0].map((rowItem) => <RowPreview>{rowItem}</RowPreview>)}
+          </RowPreviewContainer>
+        </div>
         <ActionButtons>
           <Button onClick={cancelForm}>{CANCEL}</Button>
           <Button onClick={onSubmit}>{ACCEPT}</Button>

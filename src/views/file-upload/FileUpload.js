@@ -5,9 +5,9 @@ import { Container } from '../../shared/styles';
 
 import { useFileUpload } from './utils';
 
-import { StyledFileUpload } from './UploadFileView.styles';
+import { StyledFileUpload } from './FileUpload.styles';
 
-function UploadFileView({ uploadFile }) {
+function FileUpload({ uploadFile }) {
   const { onUpload, errorMessage } = useFileUpload({ uploadFile });
 
   return (
@@ -22,8 +22,8 @@ function UploadFileView({ uploadFile }) {
 }
 
 
-UploadFileView.propTypes = {
+FileUpload.propTypes = {
   uploadFile: func.isRequired,
 };
 
-export default memo(UploadFileView);
+export default memo(FileUpload);
