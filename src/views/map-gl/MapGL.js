@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, memo, useCallback } from 'react';
-import { arrayOf, string, shape, number, instanceOf } from 'prop-types';
+import { arrayOf, func, string, shape, number, instanceOf } from 'prop-types';
 
 import ReactMapGL from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -16,7 +16,9 @@ import {
   MAPBOX_STYLE,
 } from './constants';
 
-function MapGL({ file, columnsOrder }) {
+import { Container, Button } from './MapGL.styles';
+
+function MapGL({ file, resetData, columnsOrder }) {
   const [mapApi, setMapApi] = useState();
   const [viewport, setViewPort] = useState(INITIAL_VIEWPORT);
 
@@ -25,21 +27,26 @@ function MapGL({ file, columnsOrder }) {
   }, []);
 
   return (
-    <ReactMapGL
-      mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
-      mapStyle={MAPBOX_STYLE}
-      onLoad={handleLoad}
-      visible={Boolean(mapApi)}
-      onViewportChange={setViewPort}
-      {...viewport}
-      {...MAP_SIZE}
-    >
-      {mapApi ? (
-        <MarkerLayer file={file} columnsOrder={columnsOrder} />
-      ) : (
-        <Loading />
-      )}
-    </ReactMapGL>
+    <Container>
+      <ReactMapGL
+        mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
+        mapStyle={MAPBOX_STYLE}
+        onLoad={handleLoad}
+        visible={Boolean(mapApi)}
+        onViewportChange={setViewPort}
+        {...viewport}
+        {...MAP_SIZE}
+      >
+        {mapApi ? (
+          <>
+            <Button onClick={resetData}>Upload new file</Button>
+            <MarkerLayer file={file} columnsOrder={columnsOrder} />
+          </>
+        ) : (
+          <Loading />
+        )}
+      </ReactMapGL>
+    </Container>
   );
 }
 
@@ -52,6 +59,7 @@ MapGL.propTypes = {
     meta: instanceOf(Object),
     name: string,
   }).isRequired,
+  resetData: func.isRequired,
 };
 
 export default memo(MapGL);

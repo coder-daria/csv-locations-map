@@ -1,80 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<MapGL /> renders without crashing 1`] = `
-<InteractiveMap
-  altitude={1.5}
-  asyncRender={false}
-  attributionControl={true}
-  bearing={0}
-  className=""
-  clickRadius={0}
-  container={<body />}
-  disableTokenWarning={false}
-  doubleClickZoom={true}
-  dragPan={true}
-  dragRotate={true}
-  getCursor={[Function]}
-  height="100vh"
-  keyboard={true}
-  latitude={51.4}
-  longitude={14.87}
-  mapOptions={Object {}}
-  mapStyle="mapbox://styles/medarilla/ckdvpnkyq13sg19qn16sah8fl"
-  mapboxApiAccessToken="pk.eyJ1IjoibWVkYXJpbGxhIiwiYSI6ImNrZHZvMDQ0cDBzY3YydHNncGlybG80cWoifQ.VIgYCyNdCDxhL7T1QNxSuQ"
-  mapboxApiUrl="https://api.mapbox.com"
-  maxPitch={60}
-  maxZoom={24}
-  minPitch={0}
-  minZoom={0}
-  onClick={null}
-  onContextMenu={[Function]}
-  onError={[Function]}
-  onHover={null}
-  onLoad={[Function]}
-  onNativeClick={null}
-  onResize={[Function]}
-  onStateChange={[Function]}
-  onTransitionEnd={[Function]}
-  onTransitionInterrupt={[Function]}
-  onTransitionStart={[Function]}
-  onViewStateChange={null}
-  onViewportChange={[Function]}
-  pitch={0}
-  preserveDrawingBuffer={false}
-  preventStyleDiffing={false}
-  reuseMaps={false}
-  scrollZoom={true}
-  style={null}
-  touchAction="none"
-  touchRotate={false}
-  touchZoom={true}
-  transitionDuration={0}
-  transitionEasing={[Function]}
-  transitionInterpolator={
-    LinearInterpolator {
-      "around": undefined,
-      "propNames": Array [
-        "longitude",
-        "latitude",
-        "zoom",
-        "bearing",
-        "pitch",
-      ],
+<styled.div>
+  <InteractiveMap
+    altitude={1.5}
+    asyncRender={false}
+    attributionControl={true}
+    bearing={0}
+    className=""
+    clickRadius={0}
+    container={<body />}
+    disableTokenWarning={false}
+    doubleClickZoom={true}
+    dragPan={true}
+    dragRotate={true}
+    getCursor={[Function]}
+    height="100%"
+    keyboard={true}
+    latitude={51.4}
+    longitude={14.87}
+    mapOptions={Object {}}
+    mapStyle="mapbox://styles/medarilla/ckdvpnkyq13sg19qn16sah8fl"
+    mapboxApiAccessToken="pk.eyJ1IjoibWVkYXJpbGxhIiwiYSI6ImNrZHZvMDQ0cDBzY3YydHNncGlybG80cWoifQ.VIgYCyNdCDxhL7T1QNxSuQ"
+    mapboxApiUrl="https://api.mapbox.com"
+    maxPitch={60}
+    maxZoom={24}
+    minPitch={0}
+    minZoom={0}
+    onClick={null}
+    onContextMenu={[Function]}
+    onError={[Function]}
+    onHover={null}
+    onLoad={[Function]}
+    onNativeClick={null}
+    onResize={[Function]}
+    onStateChange={[Function]}
+    onTransitionEnd={[Function]}
+    onTransitionInterrupt={[Function]}
+    onTransitionStart={[Function]}
+    onViewStateChange={null}
+    onViewportChange={[Function]}
+    pitch={0}
+    preserveDrawingBuffer={false}
+    preventStyleDiffing={false}
+    reuseMaps={false}
+    scrollZoom={true}
+    style={null}
+    touchAction="none"
+    touchRotate={false}
+    touchZoom={true}
+    transitionDuration={0}
+    transitionEasing={[Function]}
+    transitionInterpolator={
+      LinearInterpolator {
+        "around": undefined,
+        "propNames": Array [
+          "longitude",
+          "latitude",
+          "zoom",
+          "bearing",
+          "pitch",
+        ],
+      }
     }
-  }
-  transitionInterruption={1}
-  visibilityConstraints={
-    Object {
-      "maxPitch": 60,
-      "maxZoom": 24,
-      "minPitch": 0,
-      "minZoom": 0,
+    transitionInterruption={1}
+    visibilityConstraints={
+      Object {
+        "maxPitch": 60,
+        "maxZoom": 24,
+        "minPitch": 0,
+        "minZoom": 0,
+      }
     }
-  }
-  visible={false}
-  width="100vw"
-  zoom={2}
->
-  <Loading />
-</InteractiveMap>
+    visible={false}
+    width="100%"
+    zoom={2}
+  >
+    <Loading />
+  </InteractiveMap>
+</styled.div>
 `;

@@ -1,6 +1,6 @@
 export const MAP_SIZE = {
-  height: '100vh',
-  width: '100vw',
+  height: '100%',
+  width: '100%',
 };
 
 export const INITIAL_VIEWPORT = {

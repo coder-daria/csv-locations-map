@@ -18,5 +18,9 @@ export const LocationSVG = styled(Location)`
 `;
 
 export const Address = styled.span`
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100px;
 `;
