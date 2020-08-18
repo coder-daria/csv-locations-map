@@ -31,19 +31,29 @@ exports[`<Form /> should match the sanpshot 1`] = `
         First row in uploaded file.
       </div>
       <styled.div>
-        <styled.span>
+        <styled.span
+          key="Poland"
+        >
           Poland
         </styled.span>
-        <styled.span>
+        <styled.span
+          key="Wroclaw"
+        >
           Wroclaw
         </styled.span>
-        <styled.span>
+        <styled.span
+          key="Igielna 19"
+        >
           Igielna 19
         </styled.span>
-        <styled.span>
+        <styled.span
+          key="321"
+        >
           321
         </styled.span>
-        <styled.span>
+        <styled.span
+          key="Opera"
+        >
           Opera
         </styled.span>
       </styled.div>

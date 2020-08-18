@@ -19,4 +19,3 @@ describe('<App />', () => {
     expect(wrapper.find(FileUpload)).toBeDefined();
   });
 });
-

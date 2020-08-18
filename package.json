@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^5.6.4",
     "array-move": "^3.0.1",
     "cra-template": "1.0.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
     "mapbox-gl": "^1.12.0",
     "papaparse": "^5.2.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-map-gl": "^5.2.7",
@@ -19,13 +21,30 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "craco build",
+    "eject": "craco eject",
+    "start": "craco start",
+    "test": "craco test",
+    "test:coverage": "craco test --coverage",
+    "test:update": "craco test --updateSnapshot",
+    "eslint:fix": "eslint --fix src/",
+    "lint": "run-p lint:*",
+    "lint:format": "prettier --write \"**/*.js\""
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "browserslist": {
     "production": [
@@ -40,6 +59,22 @@
     ]
   },
   "devDependencies": {
-    "enzyme-to-json": "^3.5.0"
+    "babel-plugin-styled-components": "^1.11.1",
+    "craco-alias": "^2.1.1",
+    "enzyme-to-json": "^3.5.0",
+    "eslint": "^6.6.0",
+    "lint-staged": "10.2.11",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "husky": "^4.2.5",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.0.5",
+    "prettier-eslint-cli": "^5.0.0"
   }
 }

@@ -10,9 +10,9 @@ const SortableList = SortableContainer(({ items, isSorting }) => (
   <List>
     {items.map((value, index) => (
       <SortableItem
-        index={index} 
+        index={index}
         isSorting={isSorting}
-        key={index}
+        key={value}
         name={value}
         value={index}
       />

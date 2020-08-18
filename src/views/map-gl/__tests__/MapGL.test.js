@@ -12,6 +12,7 @@ const setup = () => {
     columnsOrder: ['state', 'city', 'address', 'zip', 'category'],
   };
 
+  // eslint-disable-next-line react/jsx-props-no-spreading
   return shallow(<MapGL {...props} />);
 };
 

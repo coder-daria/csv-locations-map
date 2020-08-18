@@ -5,7 +5,7 @@ import toJSON from 'enzyme-to-json';
 import FileUpload from '../FileUpload';
 
 const setup = () => {
-  const uploadFile = jest.fn()
+  const uploadFile = jest.fn();
 
   return shallow(<FileUpload uploadFile={uploadFile} />);
 };

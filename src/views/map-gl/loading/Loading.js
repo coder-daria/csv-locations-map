@@ -7,7 +7,7 @@ function Loading() {
     <Wrapper>
       <SpinnerSVG />
     </Wrapper>
-  )
+  );
 }
 
 export default Loading;

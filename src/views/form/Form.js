@@ -1,5 +1,5 @@
 import React from 'react';
-import { func, string, number } from 'prop-types';
+import { func, instanceOf, string, shape, arrayOf } from 'prop-types';
 
 import SortableList from './sortable-list/SortableList';
 import useFormDetails from './utils/use-form-details';
@@ -48,7 +48,9 @@ function Form({ setColumnsOrder, file, uploadFile }) {
         <div>
           <div>First row in uploaded file.</div>
           <RowPreviewContainer>
-            {file.data[0].map((rowItem) => <RowPreview>{rowItem}</RowPreview>)}
+            {file.data[0].map(rowItem => (
+              <RowPreview key={rowItem}>{rowItem}</RowPreview>
+            ))}
           </RowPreviewContainer>
         </div>
         <ActionButtons>
@@ -61,8 +63,11 @@ function Form({ setColumnsOrder, file, uploadFile }) {
 }
 
 Form.propTypes = {
-  fileName: string.isRequired,
-  rowsNum: number.isRequired,
+  file: shape({
+    data: arrayOf(arrayOf(string)),
+    errors: instanceOf(Array),
+    name: string,
+  }).isRequired,
   setColumnsOrder: func.isRequired,
   uploadFile: func.isRequired,
 };

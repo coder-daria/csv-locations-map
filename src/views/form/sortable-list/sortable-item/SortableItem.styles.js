@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.li`
   align-item: center;
   background-color: rgba(244, 220, 220, 0.2);
   border: 2px solid white;
-  cursor: ${({ isSorting }) => isSorting ? 'grabbing' : 'grab'};
+  cursor: ${({ isSorting }) => (isSorting ? 'grabbing' : 'grab')};
   display: flex;
   flex-direction: column;
   height: 100px;

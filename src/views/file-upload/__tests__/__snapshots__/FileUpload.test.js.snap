@@ -3,9 +3,9 @@
 exports[`<FileUpload /> should match the snapshot 1`] = `
 <styled.div>
   <styled.div>
-    <label>
+    <span>
       Upload file
-    </label>
+    </span>
     <input
       accept=".csv"
       onChange={[Function]}

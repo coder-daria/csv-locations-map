@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { Container as Background } from '../../shared/styles';
 
 export const Container = styled(Background)`

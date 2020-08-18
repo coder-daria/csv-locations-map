@@ -27,7 +27,5 @@ export const FILE_WITH_INCORRECT_COLUMNS_NUM = {
 
 export const INCORRECT_FILE = {
   ...FILE,
-  errors: [{
-      message: 'Trailing quote on quoted field is malformed',
-  }],
+  errors: [{ message: 'Trailing quote on quoted field is malformed' }],
 };

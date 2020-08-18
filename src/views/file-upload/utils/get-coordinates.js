@@ -1,4 +1,4 @@
-const randomizeCoordinates = () => [Math.random() * 51.40, Math.random() * 14.87];
+const randomizeCoordinates = () => [Math.random() * 51, Math.random() * 14];
 const getCoordinates = data => data.map(() => randomizeCoordinates());
 
 export default getCoordinates;

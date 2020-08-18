@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import { ReactComponent  as  Spinner } from '../../../assets/spinner.svg';
+import { ReactComponent as Spinner } from '../../../assets/spinner.svg';
 
 const rotate = keyframes`
  to {
@@ -9,7 +9,7 @@ const rotate = keyframes`
 `;
 
 export const SpinnerSVG = styled(Spinner)`
-  animation: ${rotate} 1.5s linear infinite; 
+  animation: ${rotate} 1.5s linear infinite;
   height: 70px;
   width: 70px;
 `;

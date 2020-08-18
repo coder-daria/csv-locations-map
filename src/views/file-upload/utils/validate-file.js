@@ -10,25 +10,27 @@ const {
 const EMPTY_STRING = '';
 const REQUIRED_ROW_FIELDS = 5;
 
+// eslint-disable-next-line consistent-return
 function validateFile(selectedFile) {
-  if(selectedFile.errors.length) {
+  if (selectedFile.errors.length) {
     const [{ message }] = selectedFile.errors;
     return `${message}. ${INCORRECT_FILE}`;
   }
 
-  if(selectedFile.data.length > 20) {
+  if (selectedFile.data.length > 20) {
     return INCORRECT_ROWS_NUM;
   }
 
-  for(let i = 0; i < selectedFile.data.length; i++) {
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < selectedFile.data.length; i++) {
     const rowFields = selectedFile.data[i];
     const emptyField = rowFields.find(field => field === EMPTY_STRING);
 
-    if(emptyField === EMPTY_STRING) {  
+    if (emptyField === EMPTY_STRING) {
       return EMPTY_FIELDS;
     }
-  
-    if(rowFields.length !== REQUIRED_ROW_FIELDS) {
+
+    if (rowFields.length !== REQUIRED_ROW_FIELDS) {
       return INCORRECT_ROW_ITEMS;
     }
   }
