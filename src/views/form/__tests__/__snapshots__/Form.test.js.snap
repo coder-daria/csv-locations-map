@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> should match the sanpshot 1`] = `
+<Styled(styled.div)>
+  <styled.div>
+    <styled.div>
+      <span>
+        locations.csv - 3 rows
+      </span>
+    </styled.div>
+    <styled.span>
+      To display locations correctly, drag and drop below fields to their representative column headers.
+    </styled.span>
+    <Memo(sortableList)
+      axis="x"
+      isSorting={false}
+      items={
+        Array [
+          "state",
+          "city",
+          "zip",
+          "address",
+          "category",
+        ]
+      }
+      onSortEnd={[Function]}
+      onSortStart={[Function]}
+    />
+    <div>
+      <div>
+        First row in uploaded file.
+      </div>
+      <styled.div>
+        <styled.span>
+          Poland
+        </styled.span>
+        <styled.span>
+          Wroclaw
+        </styled.span>
+        <styled.span>
+          Igielna 19
+        </styled.span>
+        <styled.span>
+          321
+        </styled.span>
+        <styled.span>
+          Opera
+        </styled.span>
+      </styled.div>
+    </div>
+    <styled.div>
+      <styled.button
+        onClick={[Function]}
+      >
+        Cancel
+      </styled.button>
+      <styled.button
+        onClick={[Function]}
+      >
+        Accept
+      </styled.button>
+    </styled.div>
+  </styled.div>
+</Styled(styled.div)>
+`;

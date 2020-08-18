@@ -7,6 +7,7 @@ export const DATA = [
 export const FILE = {
   data: DATA,
   errors: [],
+  name: 'locations.csv',
 };
 
 export const FILE_WITH_EMPTY_FIELDS = {
