@@ -1,5 +1,5 @@
 import React from 'react';
-import { func, string, number } from 'prop-types';
+import { func, instanceOf, string, shape, arrayOf } from 'prop-types';
 
 import SortableList from './sortable-list/SortableList';
 import useFormDetails from './utils/use-form-details';
@@ -10,16 +10,18 @@ import {
   ActionButtons,
   Button,
   Container,
-  FormInfo,
-  StyledForm,
   FileInformation,
+  FormInfo,
+  RowPreview,
+  RowPreviewContainer,
+  StyledForm,
 } from './Form.styles';
 
 const { ACCEPT, CANCEL } = BUTTON;
 
 const SORTABLE_AXIS = 'x';
 
-function Form({ setColumnsOrder, fileName, rowsNum, uploadFile }) {
+function Form({ setColumnsOrder, file, uploadFile }) {
   const {
     cancelForm,
     fields,
@@ -33,8 +35,7 @@ function Form({ setColumnsOrder, fileName, rowsNum, uploadFile }) {
     <Container>
       <StyledForm>
         <FileInformation>
-          <span>{fileName}</span>
-          <span>{`${rowsNum} rows uploaded`}</span>
+          <span>{`${file.name} - ${file.data.length} rows`}</span>
         </FileInformation>
         <FormInfo>{FORM_INFORMATION}</FormInfo>
         <SortableList
@@ -44,6 +45,14 @@ function Form({ setColumnsOrder, fileName, rowsNum, uploadFile }) {
           onSortEnd={onSortEnd}
           onSortStart={onSortStart}
         />
+        <div>
+          <div>First row in uploaded file.</div>
+          <RowPreviewContainer>
+            {file.data[0].map(rowItem => (
+              <RowPreview key={rowItem}>{rowItem}</RowPreview>
+            ))}
+          </RowPreviewContainer>
+        </div>
         <ActionButtons>
           <Button onClick={cancelForm}>{CANCEL}</Button>
           <Button onClick={onSubmit}>{ACCEPT}</Button>
@@ -54,8 +63,11 @@ function Form({ setColumnsOrder, fileName, rowsNum, uploadFile }) {
 }
 
 Form.propTypes = {
-  fileName: string.isRequired,
-  rowsNum: number.isRequired,
+  file: shape({
+    data: arrayOf(arrayOf(string)),
+    errors: instanceOf(Array),
+    name: string,
+  }).isRequired,
   setColumnsOrder: func.isRequired,
   uploadFile: func.isRequired,
 };

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Marker } from 'react-map-gl';
 
-import { ReactComponent  as  Location } from '../../../../assets/location.svg'
+import { ReactComponent as Location } from '../../../../assets/location.svg';
 
 export const MapGLMarker = styled(Marker)`
   align-items: center;
@@ -9,7 +9,6 @@ export const MapGLMarker = styled(Marker)`
   flex-direction: column;
   width: 50px;
 `;
-
 
 export const LocationSVG = styled(Location)`
   cursor: pointer;

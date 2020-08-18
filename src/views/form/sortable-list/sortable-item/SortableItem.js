@@ -17,4 +17,3 @@ SortableItem.propTypes = {
 };
 
 export default memo(SortableItem);
-

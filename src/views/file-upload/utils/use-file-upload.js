@@ -13,14 +13,14 @@ function useFileUpload({ uploadFile }) {
       },
     }) => {
       Papa.parse(selectedFile, {
-        complete: (results) => {
+        complete: results => {
           const error = validateFile(results);
-  
-          if(error) {
+
+          if (error) {
             setErrorMessage(error);
             return;
           }
-    
+
           uploadFile({
             ...results,
             name: selectedFile.name,
@@ -28,13 +28,14 @@ function useFileUpload({ uploadFile }) {
           });
         },
       });
-    }, [uploadFile],
-  )
+    },
+    [uploadFile],
+  );
 
   return {
     onUpload: handleUpload,
     errorMessage,
   };
-};
+}
 
 export default useFileUpload;

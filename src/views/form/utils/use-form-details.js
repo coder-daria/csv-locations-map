@@ -7,11 +7,9 @@ function useFormDetails({ setColumnsOrder, uploadFile }) {
   const [fields, setFields] = useState(FIELDS_NAMES);
   const [isSorting, toggleSorting] = useState(false);
 
-  const onSubmit = useCallback(
-    () => {
-        setColumnsOrder(fields);
-    }, [fields, setColumnsOrder]
-  );
+  const onSubmit = useCallback(() => {
+    setColumnsOrder(fields);
+  }, [fields, setColumnsOrder]);
 
   const onSortEnd = useCallback(
     ({ oldIndex, newIndex }) => {
@@ -19,20 +17,17 @@ function useFormDetails({ setColumnsOrder, uploadFile }) {
 
       setFields(orderedItems);
       toggleSorting(false);
-    }, [fields],
+    },
+    [fields],
   );
 
-  const onSortStart = useCallback(
-    () => {
-      toggleSorting(true);
-    }, [],
-  );
+  const onSortStart = useCallback(() => {
+    toggleSorting(true);
+  }, []);
 
-  const cancelForm = useCallback(
-    () => {
-      uploadFile();
-    }, [uploadFile],
-  );
+  const cancelForm = useCallback(() => {
+    uploadFile();
+  }, [uploadFile]);
 
   return {
     cancelForm,
@@ -42,6 +37,6 @@ function useFormDetails({ setColumnsOrder, uploadFile }) {
     fields,
     onSubmit,
   };
-};
+}
 
 export default useFormDetails;
