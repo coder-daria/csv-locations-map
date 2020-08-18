@@ -1,1 +1,1 @@
-Upload a csv file with to display locations on the map.
+Upload a csv file to display locations on the map.
