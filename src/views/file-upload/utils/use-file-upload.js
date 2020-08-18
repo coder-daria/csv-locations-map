@@ -14,7 +14,6 @@ function useFileUpload({ uploadFile }) {
     }) => {
       Papa.parse(selectedFile, {
         complete: (results) => {
-          console.log('complete');
           const error = validateFile(results);
 
           if(error) {

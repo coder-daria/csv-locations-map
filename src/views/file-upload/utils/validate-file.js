@@ -1,11 +1,4 @@
-const { freeze } = Object;
-
-const ERROR_MESSAGE = freeze({
-  INCORRECT_ROW_ITEMS: "Incorrect columns' number. Your file should contain 5 columns.",
-  INCORRECT_ROWS_NUM: 'Incorrect numbers of rows. Provide less than 20 rows.',
-  INCORRECT_FILE: 'Perhaps the file is empty or has a incorrect type.',
-  EMPTY_FIELDS: 'The file cannot contain empty fields.',
-});
+import { ERROR_MESSAGE } from '../constants';
 
 const {
   INCORRECT_FILE,
@@ -14,7 +7,7 @@ const {
   EMPTY_FIELDS,
 } = ERROR_MESSAGE;
 
-const EMPTY_STRING = "";
+const EMPTY_STRING = '';
 const REQUIRED_ROW_FIELDS = 5;
 
 function validateFile(selectedFile) {
