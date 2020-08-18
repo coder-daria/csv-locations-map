@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import arrayMove from 'array-move';
 
-const FIELDS_NAMES = ['state', 'city', 'zip', 'address', 'category'];
+const FIELDS_NAMES = ['state', 'city', 'address', 'zip', 'category'];
 
 function useFormDetails({ setColumnsOrder, uploadFile }) {
   const [fields, setFields] = useState(FIELDS_NAMES);

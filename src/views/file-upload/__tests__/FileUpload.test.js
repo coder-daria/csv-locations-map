@@ -11,7 +11,7 @@ const setup = () => {
 };
 
 describe('<FileUpload />', () => {
-  it('should match the snapshot', () => {
+  it('should match snapshot', () => {
     const wrapper = setup();
 
     expect(toJSON(wrapper)).toMatchSnapshot();

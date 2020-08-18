@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FileUpload /> should match the snapshot 1`] = `
+exports[`<FileUpload /> should match snapshot 1`] = `
 <styled.div>
   <styled.div>
     <span>
@@ -12,6 +12,8 @@ exports[`<FileUpload /> should match the snapshot 1`] = `
       type="file"
     />
   </styled.div>
-  <div />
+  <styled.div
+    isVisible={false}
+  />
 </styled.div>
 `;

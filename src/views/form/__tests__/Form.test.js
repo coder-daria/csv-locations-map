@@ -8,9 +8,9 @@ import Form from '../Form';
 
 const setup = () => {
   const props = {
-    file: FILE,
     setColumnsOrder: jest.fn(),
     uploadFile: jest.fn(),
+    file: FILE,
   };
 
   // eslint-disable-next-line react/jsx-props-no-spreading

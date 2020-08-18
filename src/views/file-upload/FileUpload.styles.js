@@ -1,17 +1,27 @@
 import styled from 'styled-components';
 
+const COLOR = '#5F5C6D';
+
+export const Container = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+`;
+
 export const StyledFileUpload = styled.div`
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 2px solid #fff;
+  border-radius: 5px;
+  border: 2px solid ${COLOR};
+  color: ${COLOR};
   display: flex;
-  font-size: 2rem;
-  font-weight: 300;
-  height: 100px;
+  font-size: 1.5rem;
+  height: 80px;
   justify-content: center;
-  margin-bottom: 20px;
   position: relative;
-  width: 300px;
+  width: 200px;
 
   input {
     cursor: pointer;
@@ -22,10 +32,16 @@ export const StyledFileUpload = styled.div`
   }
 
   &:hover {
-    box-shadow: 0px 0px 5px white;
-  }
+    background-color: #faf8ff;
+    background-color: #faf8ff;
+`;
 
-  &:active {
-    box-shadow: 0px 0px 10px #fff;
-  }
+export const ErrorMessage = styled.div`
+  color: #9e4040;
+  font-size: 1.1rem;
+  height: 100px;
+  padding-top: 20px;
+  visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};
+  width: 470px;
+  text-align: center;
 `;

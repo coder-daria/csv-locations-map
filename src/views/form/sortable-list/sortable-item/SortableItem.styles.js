@@ -2,14 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.li`
   align-item: center;
-  background-color: rgba(244, 220, 220, 0.2);
-  border: 2px solid white;
+  background-color: #5f5c6d4a;
+  border: 2px solid #5f5c6d;
   cursor: ${({ isSorting }) => (isSorting ? 'grabbing' : 'grab')};
   display: flex;
   flex-direction: column;
   height: 100px;
   justify-content: center;
-  justify-content: space-between;
   list-style: none;
   margin: 5px;
   padding: 5px;

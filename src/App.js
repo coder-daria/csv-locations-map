@@ -9,6 +9,11 @@ function App() {
   const [file, uploadFile] = useState();
   const [columnsOrder, setColumnsOrder] = useState();
 
+  const resetData = useCallback(() => {
+    uploadFile();
+    setColumnsOrder();
+  }, []);
+
   const renderContent = useCallback(() => {
     switch (true) {
       case !file:
@@ -22,9 +27,15 @@ function App() {
           />
         );
       default:
-        return <MapGL columnsOrder={columnsOrder} file={file} />;
+        return (
+          <MapGL
+            columnsOrder={columnsOrder}
+            file={file}
+            resetData={resetData}
+          />
+        );
     }
-  }, [file, columnsOrder]);
+  }, [file, columnsOrder, resetData]);
 
   return <Container> {renderContent()}</Container>;
 }

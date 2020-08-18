@@ -1,11 +1,12 @@
-export const MAP_SIZE = {
-  height: '100vh',
-  width: '100vw',
+export const MAP_STYLE = {
+  height: '100%',
+  width: '100%',
+  minZoom: 2,
 };
 
 export const INITIAL_VIEWPORT = {
-  latitude: 51.4,
-  longitude: 14.87,
+  latitude: 47.51,
+  longitude: 16.79,
   zoom: 2,
 };
 

@@ -4,7 +4,7 @@ import { func, instanceOf, string, shape, arrayOf } from 'prop-types';
 import SortableList from './sortable-list/SortableList';
 import useFormDetails from './utils/use-form-details';
 
-import { FORM_INFORMATION, BUTTON } from './constants';
+import { BUTTON } from './constants';
 
 import {
   ActionButtons,
@@ -12,7 +12,7 @@ import {
   Container,
   FileInformation,
   FormInfo,
-  RowPreview,
+  RowItemPreview,
   RowPreviewContainer,
   StyledForm,
 } from './Form.styles';
@@ -37,7 +37,11 @@ function Form({ setColumnsOrder, file, uploadFile }) {
         <FileInformation>
           <span>{`${file.name} - ${file.data.length} rows`}</span>
         </FileInformation>
-        <FormInfo>{FORM_INFORMATION}</FormInfo>
+        <FormInfo>
+          To display locations correctly, <b>drag</b> and <b>drop</b> below
+          fields to their columns header equivalents. <br />
+          <span>Below you will find an example of a row in uploaded file.</span>
+        </FormInfo>
         <SortableList
           axis={SORTABLE_AXIS}
           isSorting={isSorting}
@@ -46,10 +50,9 @@ function Form({ setColumnsOrder, file, uploadFile }) {
           onSortStart={onSortStart}
         />
         <div>
-          <div>First row in uploaded file.</div>
           <RowPreviewContainer>
             {file.data[0].map(rowItem => (
-              <RowPreview key={rowItem}>{rowItem}</RowPreview>
+              <RowItemPreview key={rowItem}>{rowItem}</RowItemPreview>
             ))}
           </RowPreviewContainer>
         </div>

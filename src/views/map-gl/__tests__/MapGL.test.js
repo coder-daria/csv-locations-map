@@ -8,8 +8,8 @@ import MapGL from '../MapGL';
 
 const setup = () => {
   const props = {
-    file: FILE,
     columnsOrder: ['state', 'city', 'address', 'zip', 'category'],
+    file: FILE,
   };
 
   // eslint-disable-next-line react/jsx-props-no-spreading

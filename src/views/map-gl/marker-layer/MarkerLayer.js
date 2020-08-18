@@ -13,6 +13,7 @@ function MarkerLayer({ file, columnsOrder }) {
     const [latitude, longitude] = file.coordinates[index];
     const categoryName = row[categoryColumnIndex].toLowerCase();
     const address = row[addressColumnIndex];
+
     return (
       <Marker
         key={`${address + index}`}
