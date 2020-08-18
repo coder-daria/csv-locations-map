@@ -11,7 +11,7 @@ import { Loading } from './loading';
 
 import {
   INITIAL_VIEWPORT,
-  MAP_SIZE,
+  MAP_STYLE,
   MAPBOX_ACCESS_TOKEN,
   MAPBOX_STYLE,
 } from './constants';
@@ -35,7 +35,7 @@ function MapGL({ file, resetData, columnsOrder }) {
         visible={Boolean(mapApi)}
         onViewportChange={setViewPort}
         {...viewport}
-        {...MAP_SIZE}
+        {...MAP_STYLE}
       >
         {mapApi ? (
           <>

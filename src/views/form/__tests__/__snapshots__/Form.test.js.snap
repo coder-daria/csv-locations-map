@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Form /> should match the sanpshot 1`] = `
-<Styled(styled.div)>
+<styled.div>
   <styled.div>
     <styled.div>
       <span>
@@ -9,7 +9,19 @@ exports[`<Form /> should match the sanpshot 1`] = `
       </span>
     </styled.div>
     <styled.span>
-      To display locations correctly, drag and drop below fields to their representative column headers.
+      To display locations correctly, 
+      <b>
+        drag
+      </b>
+       and 
+      <b>
+        drop
+      </b>
+       below fields to their columns header equivalents. 
+      <br />
+      <span>
+        Below you will find an example of a row in uploaded file.
+      </span>
     </styled.span>
     <Memo(sortableList)
       axis="x"
@@ -18,8 +30,8 @@ exports[`<Form /> should match the sanpshot 1`] = `
         Array [
           "state",
           "city",
-          "zip",
           "address",
+          "zip",
           "category",
         ]
       }
@@ -27,9 +39,6 @@ exports[`<Form /> should match the sanpshot 1`] = `
       onSortStart={[Function]}
     />
     <div>
-      <div>
-        First row in uploaded file.
-      </div>
       <styled.div>
         <styled.span
           key="Poland"
@@ -71,5 +80,5 @@ exports[`<Form /> should match the sanpshot 1`] = `
       </styled.button>
     </styled.div>
   </styled.div>
-</Styled(styled.div)>
+</styled.div>
 `;

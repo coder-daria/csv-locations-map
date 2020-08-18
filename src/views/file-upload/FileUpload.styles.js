@@ -39,7 +39,9 @@ export const StyledFileUpload = styled.div`
 export const ErrorMessage = styled.div`
   color: #9e4040;
   font-size: 1.1rem;
-  height: 50px;
+  height: 100px;
   padding-top: 20px;
   visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};
+  width: 470px;
+  text-align: center;
 `;

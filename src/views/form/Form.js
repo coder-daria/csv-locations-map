@@ -39,10 +39,8 @@ function Form({ setColumnsOrder, file, uploadFile }) {
         </FileInformation>
         <FormInfo>
           To display locations correctly, <b>drag</b> and <b>drop</b> below
-          fields to their representative column headers. <br />
-          <span>
-            Below you will find also example of a row in uploaded file.
-          </span>
+          fields to their columns header equivalents. <br />
+          <span>Below you will find an example of a row in uploaded file.</span>
         </FormInfo>
         <SortableList
           axis={SORTABLE_AXIS}
