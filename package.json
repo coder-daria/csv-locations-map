@@ -19,7 +19,8 @@
     "react-scripts": "3.4.3",
     "react-sortable-hoc": "^1.11.0",
     "sanitize.css": "^11.0.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "build": "craco build",
