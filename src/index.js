@@ -1,7 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import WebFont from 'webfontloader';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+WebFont.load({
+  google: {
+    families: ['Bitter:200,400,600', 'sans-serif'],
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
