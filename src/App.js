@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react';
 import 'sanitize.css';
 
 import { FileUpload, Form, MapGL } from './views';
-
 import { Container } from './App.styles';
 
 function App() {
